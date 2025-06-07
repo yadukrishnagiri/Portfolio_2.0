@@ -119,6 +119,11 @@ function About() {
   return (
     <div className="about-container" ref={aboutRef}>
       <div className="container">
+        {/* Neon Hero-like Intro Section */}
+        <div className="about-hero-intro">
+          <h1 className="about-hero-title glow-text">CINEMA REDUX</h1>
+          <h2 className="about-hero-subtitle">Interactive Portfolio Experience</h2>
+        </div>
         <div className="about-content">
           {/* Section Header */}
           <div className="section-header">
@@ -193,6 +198,24 @@ function About() {
                   </div>
                 </div>
               </div>
+
+              {/* Work Experience Section */}
+              <div className="work-experience-section">
+                <h4>Work Experience</h4>
+                <div className="work-experience-list">
+                  <div className="work-item">
+                    <h5>Data Science & AI Intern</h5>
+                    <p className="company">Skoler</p>
+                    <p className="work-duration">June 2023 - Aug 2023</p>
+                    <ul>
+                      <li>Developed an Al-based face detection program using Pyt and OpenCV, showcasing thepractical application of computer vision techniques.</li>
+                      <li>Enhanced understanding of machine learning algorithms applying them to real-world projects.</li>
+                      <li>Worked with Python libraries like NumPy, SciPy, and Pandas to analyze and visualize dataeffectively</li>
+                      <li>Gained exposure to end-to-end project development from ideation to deployment, fosteringa holistic technical perspective</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="about-visual">
@@ -209,6 +232,13 @@ function About() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Download Resume Button UNDER the entire about-main section */}
+          <div className="resume-download-under">
+            <a href="/YADUKRISHNAGIRI.pdf" className="btn btn-primary resume-btn-animated" download>
+              <span>⬇️</span> Download Resume
+            </a>
           </div>
 
           {/* Skills Preview */}

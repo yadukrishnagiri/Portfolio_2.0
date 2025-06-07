@@ -12,7 +12,7 @@ import './App.css'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
-  const [activeSection, setActiveSection] = useState('hero')
+  const [activeSection, setActiveSection] = useState('about')
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showLensFlare, setShowLensFlare] = useState(false)
 
@@ -124,25 +124,35 @@ function App() {
 
       {/* Main Content */}
       <main className="main-content">
-        {/* Hero Section */}
-        <section id="hero" className="section hero-section">
-          <Hero onNavigate={navigateToSection} />
-        </section>
-
-        {/* About Section */}
+        {/* About Section (now first section) */}
         <section id="about" className="section about-section">
           <About />
         </section>
+        <div className="resume-download-under">
+          <a href="/YADUKRISHNAGIRI.pdf" className="btn btn-primary resume-btn-animated" download>
+            <span>⬇️</span> Download Resume
+          </a>
+        </div>
 
         {/* Projects Section */}
         <section id="projects" className="section projects-section">
           <Projects />
         </section>
+        <div className="resume-download-under">
+          <a href="/YADUKRISHNAGIRI.pdf" className="btn btn-primary resume-btn-animated" download>
+            <span>⬇️</span> Download Resume
+          </a>
+        </div>
 
         {/* Contact Section */}
         <section id="contact" className="section contact-section">
           <Contact />
         </section>
+        <div className="resume-download-under">
+          <a href="/YADUKRISHNAGIRI.pdf" className="btn btn-primary resume-btn-animated" download>
+            <span>⬇️</span> Download Resume
+          </a>
+        </div>
       </main>
 
       {/* Cinema UI Elements */}
