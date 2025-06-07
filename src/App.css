@@ -1,0 +1,438 @@
+/* ============================================
+   APP COMPONENT STYLES - CINEMA REDUX
+   ============================================ */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 3D Canvas Container */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.fixed-canvas {
+  background: transparent;
+}
+
+/* Main Content Area */
+.main-content {
+  position: relative;
+  z-index: 10;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+/* Enhanced Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Parallax Scroll Effects */
+.section {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Section Transition Animations */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: sectionSlideIn 1s ease-out forwards;
+}
+
+@keyframes sectionSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered Section Animation Delays */
+.hero-section { animation-delay: 0.1s; }
+.about-section { animation-delay: 0.2s; }
+.projects-section { animation-delay: 0.3s; }
+.contact-section { animation-delay: 0.4s; }
+
+/* Scroll-triggered Glow Effects */
+.section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 212, 255, 0.05) 0%,
+    transparent 50%,
+    rgba(0, 102, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section.in-view::after {
+  opacity: 1;
+}
+
+/* Section Styling */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--spacing-xl) 0;
+}
+
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.9) 0%,
+    rgba(22, 33, 62, 0.8) 50%,
+    rgba(10, 10, 10, 0.9) 100%
+  );
+}
+
+.about-section {
+  background: linear-gradient(
+    45deg,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(26, 26, 46, 0.8) 100%
+  );
+}
+
+.skills-section {
+  background: linear-gradient(
+    -45deg,
+    rgba(22, 33, 62, 0.9) 0%,
+    rgba(10, 10, 10, 0.8) 100%
+  );
+}
+
+.projects-section {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.9) 0%,
+    rgba(26, 26, 46, 0.85) 100%
+  );
+}
+
+.contact-section {
+  background: linear-gradient(
+    45deg,
+    rgba(22, 33, 62, 0.95) 0%,
+    rgba(10, 10, 10, 0.9) 100%
+  );
+}
+
+/* Cinema UI Elements */
+.cinema-ui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Film Strip Decorations */
+.film-strip {
+  position: fixed;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 0%,
+    #333 10%,
+    #1a1a1a 15%,
+    #333 20%,
+    #1a1a1a 25%,
+    #333 30%,
+    #1a1a1a 35%,
+    #333 40%,
+    #1a1a1a 45%,
+    #333 50%,
+    #1a1a1a 55%,
+    #333 60%,
+    #1a1a1a 65%,
+    #333 70%,
+    #1a1a1a 75%,
+    #333 80%,
+    #1a1a1a 85%,
+    #333 90%,
+    #1a1a1a 100%
+  );
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.film-strip-left {
+  left: 0;
+  animation: filmStripMove 20s linear infinite;
+}
+
+.film-strip-right {
+  right: 0;
+  animation: filmStripMove 25s linear infinite reverse;
+}
+
+@keyframes filmStripMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
+}
+
+/* Vintage Overlay Effects */
+.vintage-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(153, 0, 255, 0.02) 0%, transparent 50%);
+  animation: vintageGlow 10s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+@keyframes vintageGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.1; }
+}
+
+/* Floating Particles for Scroll Flair */
+.scroll-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 212, 255, 0.6);
+  border-radius: 50%;
+  animation: particleFloat 8s linear infinite;
+}
+
+.particle:nth-child(odd) {
+  background: rgba(0, 102, 255, 0.4);
+  animation-duration: 12s;
+}
+
+.particle:nth-child(3n) {
+  background: rgba(153, 0, 255, 0.3);
+  animation-duration: 10s;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Cinema Lens Flare Effect */
+.lens-flare {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.lens-flare.active {
+  opacity: 1;
+}
+
+.flare-spot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+  filter: blur(1px);
+  animation: flareMove 4s ease-in-out infinite;
+}
+
+.flare-spot:nth-child(1) {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.flare-spot:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 20%;
+  animation-delay: 1s;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
+}
+
+.flare-spot:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  bottom: 30%;
+  left: 50%;
+  animation-delay: 2s;
+  background: radial-gradient(circle, rgba(153, 0, 255, 0.2) 0%, transparent 70%);
+}
+
+@keyframes flareMove {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2) translateY(-20px);
+    opacity: 0.6;
+  }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #0066ff, #9900ff);
+  width: 0%;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+    min-height: 90vh;
+  }
+  
+  .film-strip {
+    width: 20px;
+    opacity: 0.05;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--spacing-md) 0;
+    min-height: 80vh;
+  }
+  
+  .film-strip {
+    display: none;
+  }
+  
+  .vintage-overlay {
+    opacity: 0.5;
+  }
+}
+
+/* Section Transition Effects */
+.section {
+  transition: all var(--transition-slow);
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  z-index: -1;
+}
+
+.section.active::before {
+  opacity: 1;
+}
+
+/* Scroll Indicators */
+.scroll-indicator {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--neon-cyan);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.scroll-dot.active {
+  background: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.scroll-dot:hover {
+  background: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: var(--glow-blue);
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    right: 1rem;
+  }
+  
+  .scroll-dot {
+    width: 10px;
+    height: 10px;
+  }
+} 
