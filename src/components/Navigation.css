@@ -12,6 +12,7 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 255, 255, 0.2);
   transition: all var(--transition-normal);
+  animation: navFadeIn 1.2s cubic-bezier(0.4,0,0.2,1);
 }
 
 .cinema-nav.scrolled {
@@ -78,7 +79,8 @@
   letter-spacing: 0.05em;
   cursor: pointer;
   transition: all var(--transition-normal);
-  overflow: hidden;
+  overflow: visible;
+  transition: color 0.3s;
 }
 
 .nav-item::before {
@@ -112,29 +114,46 @@
 .nav-icon {
   font-size: 1.1rem;
   filter: drop-shadow(0 0 5px currentColor);
+  display: inline-block;
+  transition: transform 0.3s, filter 0.3s;
+  animation: iconFloat 2.5s ease-in-out infinite;
 }
 
 .nav-label {
   font-size: 0.85rem;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, var(--neon-cyan), transparent);
+  left: 0; right: 0; bottom: -6px;
+  height: 3px;
+  background: linear-gradient(90deg, #00eaff, #0066ff, #00eaff);
+  border-radius: 2px;
   opacity: 0;
-  transition: all var(--transition-normal);
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  transform: scaleX(0.5);
+  transition: opacity 0.3s, transform 0.3s;
+  filter: blur(2px);
+  pointer-events: none;
 }
 
-.nav-item:hover .nav-glow {
-  width: 120%;
-  height: 120%;
-  opacity: 0.1;
+.nav-item:hover .nav-glow,
+.nav-item.active .nav-glow {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.nav-item:hover .nav-label,
+.nav-item.active .nav-label {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff99;
+}
+
+.nav-item:hover .nav-icon,
+.nav-item.active .nav-icon {
+  filter: drop-shadow(0 0 12px #00eaffcc);
+  transform: scale(1.12) translateY(-2px);
 }
 
 /* Mobile Menu Toggle */
@@ -184,6 +203,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  animation: navFadeIn 1.2s cubic-bezier(0.4,0,0.2,1);
 }
 
 .mobile-menu.active {
@@ -283,20 +303,16 @@
   }
 }
 
-/* Navigation Entrance Animation */
-.cinema-nav {
-  animation: navSlideDown 0.8s ease-out;
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important;
+  }
 }
 
-@keyframes navSlideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* Navigation Entrance Animation */
+@keyframes navFadeIn {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Active Section Indicator */
@@ -307,4 +323,57 @@
 @keyframes iconPulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
+}
+
+/* === NAVIGATION ANIMATIONS === */
+.nav-item {
+  position: relative;
+  overflow: visible;
+  transition: color 0.3s;
+}
+
+.nav-item .nav-icon {
+  display: inline-block;
+  transition: transform 0.3s, filter 0.3s;
+  animation: iconFloat 2.5s ease-in-out infinite;
+}
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 6px #00eaff44); }
+  50% { transform: translateY(-4px) scale(1.08); filter: drop-shadow(0 0 12px #00eaff99); }
+}
+
+.nav-item .nav-label {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item .nav-glow {
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 3px;
+  background: linear-gradient(90deg, #00eaff, #0066ff, #00eaff);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0.5);
+  transition: opacity 0.3s, transform 0.3s;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.nav-item:hover .nav-glow,
+.nav-item.active .nav-glow {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.nav-item:hover .nav-label,
+.nav-item.active .nav-label {
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff99;
+}
+
+.nav-item:hover .nav-icon,
+.nav-item.active .nav-icon {
+  filter: drop-shadow(0 0 12px #00eaffcc);
+  transform: scale(1.12) translateY(-2px);
 } 

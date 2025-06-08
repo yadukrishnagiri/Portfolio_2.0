@@ -6,8 +6,6 @@ function Navigation({ activeSection, onNavigate }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { id: 'hero', label: 'HOME', icon: '🎬' },
-    { id: 'about', label: 'ABOUT', icon: '⚽' },
     { id: 'projects', label: 'PROJECTS', icon: '🎮' },
     { id: 'contact', label: 'CONTACT', icon: '📧' }
   ]
@@ -20,6 +18,14 @@ function Navigation({ activeSection, onNavigate }) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 769) setIsMobileMenuOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleNavClick = (sectionId) => {
     onNavigate(sectionId)
