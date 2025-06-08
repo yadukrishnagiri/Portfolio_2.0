@@ -43,8 +43,8 @@ function Projects() {
     "Real-time code analysis and feedback",
     "Game development specific optimizations"
       ],
-      liveLink: "https://your-recommendation-demo.vercel.app",
-      githubLink: "https://github.com/yadukrishnagiri/recommendation-engine",
+      liveLink: "https://ai-compiler.onrender.com",
+      githubLink: "https://github.com/yadukrishnagiri/ai-compiler",
       image: "🎯",
       category: "ML",
       status: "Completed"
@@ -69,8 +69,8 @@ function Projects() {
         "Automated technical skill assessment",
         "JSON-based response parsing and validation"
       ],
-      liveLink: "https://your-sentiment-app.netlify.app",
-      githubLink: "https://github.com/yadukrishnagiri/sentiment-analysis",
+      liveLink: "https://ai-cv-analyzer.onrender.com",
+      githubLink: "https://github.com/yadukrishnagiri/AI-CV-Analyzer",
       image: "🧠",
       category: "NLP",
       status: "Completed"
@@ -90,10 +90,10 @@ function Projects() {
     "Semantic search capabilities"
   ],
       liveLink: "https://your-football-analytics.streamlit.app",
-      githubLink: "https://github.com/yadukrishnagiri/football-analytics",
+      githubLink: "https://github.com/yadukrishnagiri/A.R.T.E.M.I.S---Football-Statistics-Assistant",
       image: "⚽",
       category: "Analytics",
-      status: "In Progress"
+      status: "Completed"
     },
     {
       id: 4,
@@ -113,8 +113,8 @@ function Projects() {
     "Multi-threaded architecture for seamless operation",
     "Intuitive voice commands for system control (click, scroll, pause/resume)"
   ],
-      liveLink: "https://your-cv-classifier.herokuapp.com",
-      githubLink: "https://github.com/yadukrishnagiri/cv-classifier",
+      liveLink: "https://hands-free-interactive-system.onrender.com",
+      githubLink: "https://github.com/yadukrishnagiri/Hands-Free-Interactive-System",
       image: "👁️",
       category: "Computer Vision",
       status: "Completed"
@@ -131,11 +131,11 @@ function Projects() {
         "Machine learning model development",
         "Interactive data analysis environment"
       ],
-      liveLink: "https://your-data-pipeline-demo.com",
-      githubLink: "https://github.com/yadukrishnagiri/data-pipeline",
+      liveLink: "https://world-happiness-index-analysis.onrender.com",
+      githubLink: "https://github.com/yadukrishnagiri/World-Happiness-Index-Analysis",
       image: "🔄",
       category: "Data Engineering",
-      status: "In Progress"
+      status: "Completed"
     },
     {
       id: 6,
