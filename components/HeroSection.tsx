@@ -69,7 +69,7 @@ export function HeroSection() {
           <motion.div variants={itemVariants} className="text-center mb-8">
             <div className="flex justify-center mb-8">
               <Avatar className="w-32 h-32 border-4 border-cosmic-gradient">
-                <AvatarImage src="/avatar.jpg" alt="Yadukrishnagiri" />
+                <AvatarImage src="/profile pic.jpeg" alt="Yadukrishnagiri" className="object-cover" />
                 <AvatarFallback className="text-2xl font-bold bg-cosmic-gradient text-white">
                   YG
                 </AvatarFallback>
