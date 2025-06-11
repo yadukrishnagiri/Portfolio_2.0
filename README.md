@@ -1,302 +1,150 @@
-# 🎬 CINEMA REDUX - Interactive 3D Portfolio
+# Portfolio Project
 
-A stunning 3D interactive portfolio website with classic 2010s movie cinema vibes, showcasing your passion for **Football**, **Movies**, and **AI/Coding**.
-
-![Cinema Redux Preview](./preview.png)
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and shadcn/ui components.
 
 ## ✨ Features
 
-### 🎭 Core Sections
-- **Hero Section** - 3D floating cinema reel with dramatic entrance
-- **About Me** - Football field scene with movie posters backdrop
-- **Skills** - Interactive 3D tech stack visualization  
-- **Projects** - Movie theater gallery with project showcases
-- **Contact** - Retro movie ticket booking style contact form
+- **Modern UI**: Built with shadcn/ui components and Radix UI primitives
+- **Responsive Design**: Fully responsive layout using Tailwind CSS
+- **Dark/Light Theme**: Theme switching with next-themes
+- **Smooth Animations**: Enhanced user experience with Framer Motion
+- **Form Handling**: Robust forms with React Hook Form and Zod validation
+- **Icons**: Beautiful icons from Lucide React and React Icons
+- **Charts**: Data visualization with Recharts
+- **Testing**: Unit testing setup with Vitest and Testing Library
 
-### 🎮 Interactive Elements
-- **3D Background** - Dynamic particle systems and floating objects
-- **Smooth Transitions** - Camera movements between sections
-- **Hover Effects** - Interactive UI elements with glow effects
-- **Responsive Design** - Optimized for all devices
-- **Film Grain Effect** - Authentic vintage movie aesthetic
-- **Neon Glow Theme** - Classic 2010s sci-fi movie styling
+## 🚀 Tech Stack
 
-### 🛠️ Tech Stack
-- **React 18** - Modern React with hooks
-- **Three.js** - 3D graphics and animations
-- **@react-three/fiber** - React renderer for Three.js
-- **@react-three/drei** - Useful helpers for R3F
-- **Framer Motion** - Advanced animations
-- **GSAP** - High-performance animations
-- **Styled Components** - CSS-in-JS styling
-- **Vite** - Lightning fast build tool
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui + Radix UI
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form + Zod
+- **Icons**: Lucide React, React Icons
+- **Charts**: Recharts
+- **Testing**: Vitest, Testing Library
+- **Linting**: ESLint
 
-## 🚀 Quick Start
+## 📦 Installation
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn package manager
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd port
+   ```
 
-### Installation
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-1. **Clone & Install**
-```bash
-# Install dependencies
-npm install
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-# Start development server
-npm run dev
-```
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-2. **Open your browser**
-```
-http://localhost:3000
-```
+## 🛠️ Available Scripts
 
-3. **Build for production**
-```bash
-npm run build
-npm run preview
-```
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
 ## 📁 Project Structure
 
 ```
-cinema-redux-portfolio/
-├── public/
-│   ├── cinema-icon.svg
-│   └── assets/
-├── src/
-│   ├── components/
-│   │   ├── sections/
-│   │   │   ├── Hero.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── Skills.jsx
-│   │   │   ├── Projects.jsx
-│   │   │   └── Contact.jsx
-│   │   ├── 3d/
-│   │   │   ├── Background3D.jsx
-│   │   │   ├── CinemaReel.jsx
-│   │   │   └── FloatingElements.jsx
-│   │   ├── Navigation.jsx
-│   │   └── LoadingScreen.jsx
-│   ├── styles/
-│   │   └── globals.css
-│   ├── data/
-│   │   ├── projects.js
-│   │   └── skills.js
-│   ├── utils/
-│   │   └── animations.js
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-└── README.md
+port/
+├── app/                    # Next.js App Router
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx          # Home page
+├── components/            # Reusable UI components
+├── lib/                  # Utility functions
+├── hooks/                # Custom React hooks
+├── public/               # Static assets
+├── .next/                # Next.js build output
+└── node_modules/         # Dependencies
 ```
 
-## 🎯 Development Roadmap
+## 🎨 Components
 
-### Phase 1: Foundation ✅
-- [x] Project setup with Vite + React
-- [x] 3D canvas with Three.js integration
-- [x] Loading screen with cinema effects
-- [x] Global styling with 2010s movie theme
-- [x] Film grain and vintage effects
+This project includes a comprehensive set of shadcn/ui components:
 
-### Phase 2: Core Components (Next Steps)
-- [ ] Navigation with smooth scrolling
-- [ ] Hero section with 3D cinema reel
-- [ ] About section with football field scene
-- [ ] Skills section with 3D tech visualization
-- [ ] Projects section with movie theater gallery
-- [ ] Contact section with ticket booking form
+- **Layout**: Accordion, Collapsible, Resizable Panels, Scroll Area, Separator, Tabs
+- **Navigation**: Context Menu, Dropdown Menu, Hover Card, Menubar, Navigation Menu, Popover
+- **Form**: Checkbox, Input OTP, Label, Radio Group, Select, Slider, Switch, Toggle
+- **Feedback**: Alert Dialog, Dialog, Progress, Toast, Tooltip
+- **Display**: Avatar, Aspect Ratio, Calendar, Carousel, Command, Date Picker
+- **Data**: Charts (via Recharts)
 
-### Phase 3: Advanced Features
-- [ ] Interactive 3D background particles
-- [ ] Camera transitions between sections
-- [ ] Sound effects integration
-- [ ] Mobile gesture controls
-- [ ] Performance optimizations
+## 🔧 Configuration
 
-### Phase 4: Content & Polish
-- [ ] Project showcase integration
-- [ ] Social media links
-- [ ] SEO optimization
-- [ ] Analytics integration
-- [ ] Final testing & deployment
+### Tailwind CSS
+The project uses Tailwind CSS with custom animations and additional plugins:
+- `tailwindcss-animate` for smooth animations
+- `tw-animate-css` for enhanced animation utilities
 
-## 🔧 Customization Guide
+### TypeScript
+Full TypeScript support with strict type checking configured in `tsconfig.json`.
 
-### Adding New Projects
+### ESLint
+Code quality ensured with ESLint and Next.js recommended configuration.
 
-1. **Update project data** in `src/data/projects.js`:
-```javascript
-export const projects = [
-  {
-    id: 1,
-    title: "Your Project Name",
-    description: "Brief description of your project",
-    image: "/path/to/your/image.jpg",
-    technologies: ["React", "Node.js", "MongoDB"],
-    liveUrl: "https://your-project.com",
-    githubUrl: "https://github.com/yourusername/project",
-    featured: true // For hero section showcase
-  }
-  // Add more projects here...
-]
+## 🌟 Key Features
+
+### Theme Support
+Built-in dark/light theme switching powered by `next-themes`.
+
+### Form Validation
+Robust form handling with React Hook Form and Zod schema validation.
+
+### Responsive Design
+Mobile-first responsive design using Tailwind CSS utilities.
+
+### Animations
+Smooth animations and transitions using Framer Motion.
+
+### Accessibility
+Built with accessibility in mind using Radix UI primitives.
+
+## 📝 Development
+
+### Adding New Components
+To add new shadcn/ui components:
+
+```bash
+npx shadcn-ui@latest add [component-name]
 ```
 
-2. **Add project images** to `public/assets/projects/`
+### Environment Variables
+Create a `.env.local` file for environment-specific variables:
 
-3. **Update the Projects component** to display your new projects
-
-### Updating Skills
-
-1. **Modify skills data** in `src/data/skills.js`:
-```javascript
-export const skills = {
-  frontend: [
-    { name: "React", level: 90, icon: "⚛️" },
-    { name: "JavaScript", level: 95, icon: "🟨" },
-    // Add your skills here...
-  ],
-  backend: [
-    { name: "Node.js", level: 85, icon: "🟢" },
-    // Add your skills here...
-  ],
-  ai: [
-    { name: "Machine Learning", level: 80, icon: "🤖" },
-    // Add your AI skills here...
-  ]
-}
+```env
+# Add your environment variables here
+NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-### Personalizing Content
+## 🧪 Testing
 
-1. **Update personal information** in each section component
-2. **Replace placeholder text** with your own content
-3. **Add your social media links** in the Contact section
-4. **Upload your profile photos** to `public/assets/`
-
-### Customizing Colors
-
-Modify the CSS variables in `src/index.css`:
-```css
-:root {
-  --neon-cyan: #00ffff;        /* Primary accent color */
-  --neon-blue: #0066ff;        /* Secondary accent color */  
-  --neon-purple: #9900ff;      /* Tertiary accent color */
-  --gold-accent: #ffd700;      /* Highlight color */
-  /* Customize other colors... */
-}
+Run tests with:
+```bash
+npm run test
 ```
 
-## 🎨 Design Inspiration
-
-This portfolio draws inspiration from:
-- **2010s Sci-Fi Movies** (Tron Legacy, Blade Runner, etc.)
-- **Cinema Aesthetics** (Film reels, movie theaters, vintage effects)
-- **Neon Cyberpunk** design elements
-- **Interactive 3D** web experiences
-
-## 📱 Browser Support
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🚀 Deployment
-
-### Netlify (Recommended)
-1. Build the project: `npm run build`
-2. Upload `dist` folder to Netlify
-3. Configure redirects for SPA routing
-
-### Vercel
-1. Connect your GitHub repository
-2. Vercel will auto-build and deploy
-
-### Manual Hosting
-1. Run `npm run build`
-2. Upload `dist` folder contents to your web server
-
-## 🤝 Contributing
-
-Want to enhance this portfolio template?
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your improvements
-4. Submit a pull request
+The project is configured with Vitest and Testing Library for unit testing.
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is for portfolio purposes.
 
-## 🎯 Performance Tips
+## 🤝 Contributing
 
-- **Lazy load** 3D components
-- **Optimize images** before adding to project
-- **Use web fonts** efficiently
-- **Enable gzip compression** on server
-- **Monitor bundle size** with `npm run build`
-
-## 🆘 Common Issues & Solutions
-
-### 3D Models Not Loading
-- Check file paths in `public/assets/`
-- Ensure models are in supported formats (GLB, GLTF)
-
-### Performance Issues
-- Reduce particle count in 3D scenes
-- Optimize image sizes
-- Enable production build optimizations
-
-### Mobile Responsiveness
-- Test on various screen sizes
-- Adjust 3D camera settings for mobile
-- Optimize touch interactions
+This is a personal portfolio project. Feel free to fork and customize for your own use!
 
 ---
 
-**Made with ❤️ for creative developers who love movies, football, and cutting-edge tech!**
-
-*Ready to showcase your skills in cinematic style? Let's build something amazing together!* 🎬✨ 
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## Deployment
-
-This project is configured for easy deployment on Netlify:
-
-1. Push your code to GitHub
-2. Connect your repository to Netlify
-3. Use the following build settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-
-## Technologies Used
-
-- React
-- Three.js
-- GSAP
-- Vite
-- CSS3
-- Framer Motion
-- React Router
-- Styled Components 
+Built with ❤️ using Next.js and shadcn/ui 
