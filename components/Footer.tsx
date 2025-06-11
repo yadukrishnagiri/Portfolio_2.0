@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Heart, Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react"
+import { Heart, Github, Linkedin, Twitter, Mail, ArrowUp, Download } from "lucide-react"
 
 const quickLinks = [
   { href: "#about", label: "About" },
@@ -14,10 +14,10 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/your-username", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/your-handle", label: "Twitter" },
-  { icon: Mail, href: "mailto:john.doe@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/yadukrishnagiri", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/yadukrishnagiri/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/YADUKRISHNGIRi", label: "Twitter" },
+  { icon: Mail, href: "mailto:yadukrishnagiriwork@gmail.com", label: "Email" },
 ]
 
 export function Footer() {
@@ -53,10 +53,10 @@ export function Footer() {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold text-cosmic-gradient mb-4">
-                John Doe
+                Yadukrishnagiri
               </h3>
               <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-                ML Engineer & Full-Stack Developer passionate about creating intelligent solutions 
+                AI/ML Engineer & Full-Stack Developer passionate about creating intelligent solutions 
                 that bridge the gap between cutting-edge AI research and practical applications.
               </p>
               <div className="flex items-center text-sm text-muted-foreground">
@@ -102,33 +102,52 @@ export function Footer() {
               <h4 className="font-semibold text-foreground mb-4">Connect</h4>
               <div className="space-y-3 mb-6">
                 <p className="text-sm text-muted-foreground">
-                  john.doe@example.com
+                  +91 7736729202
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  San Francisco, CA
+                  Delhi, India
                 </p>
               </div>
               
-              <div className="flex gap-2">
-                {socialLinks.map((social, index) => (
-                  <motion.div
-                    key={social.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="hover:text-cosmic-gradient hover:bg-accent transition-all duration-200"
-                      onClick={() => window.open(social.href, '_blank')}
+              <div className="space-y-4">
+                <div className="flex gap-2">
+                  {socialLinks.map((social, index) => (
+                    <motion.div
+                      key={social.label}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
                     >
-                      <social.icon className="w-4 h-4" />
-                      <span className="sr-only">{social.label}</span>
-                    </Button>
-                  </motion.div>
-                ))}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="hover:text-cosmic-gradient hover:bg-accent transition-all duration-200"
+                        onClick={() => window.open(social.href, '_blank')}
+                      >
+                        <social.icon className="w-4 h-4" />
+                        <span className="sr-only">{social.label}</span>
+                      </Button>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full hover:bg-accent hover:scale-105 transition-all duration-200"
+                    onClick={() => window.open('/YADUKRISHNAGIRI.pdf', '_blank')}
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Resume
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -145,7 +164,7 @@ export function Footer() {
           className="flex flex-col sm:flex-row justify-between items-center gap-4"
         >
           <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
-            <p>&copy; 2024 John Doe. All rights reserved.</p>
+            <p>&copy; 2024 Yadukrishnagiri. All rights reserved.</p>
             <div className="flex gap-4">
               <button className="hover:text-foreground transition-colors duration-200">
                 Privacy Policy

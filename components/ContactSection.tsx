@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { 
   Mail, Phone, MapPin, Github, Linkedin, Twitter, 
-  Send, Loader2 
+  Send, Loader2, Download 
 } from "lucide-react"
 import { toast } from "sonner"
 
@@ -27,7 +27,13 @@ import { toast } from "sonner"
    - Update href values with your actual profiles
    - Add new social platforms by copying object structure
 
-3. CONTACT INFO STRUCTURE:
+3. TO SETUP EMAIL FUNCTIONALITY:
+   - Sign up for EmailJS (https://emailjs.com)
+   - Create a service (Gmail, Outlook, etc.)
+   - Create an email template
+   - Update the EmailJS configuration below with your IDs
+
+4. CONTACT INFO STRUCTURE:
    {
      icon: <Mail className="w-6 h-6" />,
      label: "Email",
@@ -36,24 +42,31 @@ import { toast } from "sonner"
    }
 */
 
+// EmailJS Configuration - Replace with your actual values
+const EMAILJS_CONFIG = {
+  serviceId: 'service_7d51kcb', // Replace with your EmailJS service ID
+  templateId: 'template_4anglnm', // Replace with your EmailJS template ID
+  publicKey: 'P1gI_9-akZrUUnnkD' // Replace with your EmailJS public key
+}
+
 const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
     label: "Email",
-    value: "john.doe@example.com",
-    href: "mailto:john.doe@example.com"
+    value: "yadukrishnagiriwork@gmail.com",
+    href: "mailto:yadukrishnagiriwork@gmail.com"
   },
   {
     icon: <Phone className="w-6 h-6" />,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567"
+    value: "+91 7736729202",
+    href: "tel:+917736729202"
   },
   {
     icon: <MapPin className="w-6 h-6" />,
     label: "Location",
-    value: "San Francisco, CA",
-    href: "https://maps.google.com/?q=San+Francisco,+CA"
+    value: "Delhi, India",
+    href: "https://maps.google.com/?q=Delhi,+India"
   }
 ]
 
@@ -61,19 +74,19 @@ const socialLinks = [
   {
     icon: <Github className="w-6 h-6" />,
     label: "GitHub",
-    href: "https://github.com/your-username",
+    href: "https://github.com/yadukrishnagiri",
     color: "hover:text-gray-900 dark:hover:text-white"
   },
   {
     icon: <Linkedin className="w-6 h-6" />,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://linkedin.com/in/yadukrishnagiri/",
     color: "hover:text-blue-600"
   },
   {
     icon: <Twitter className="w-6 h-6" />,
     label: "Twitter",
-    href: "https://twitter.com/your-handle",
+    href: "https://x.com/YADUKRISHNGIRi",
     color: "hover:text-blue-400"
   }
 ]
@@ -89,28 +102,81 @@ export function ContactSection() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    console.log(`Form input changed: ${name} = ${value}`)
     setFormData(prev => ({
       ...prev,
       [name]: value
     }))
   }
 
+  const validateForm = () => {
+    if (!formData.name.trim()) {
+      toast.error("Please enter your name")
+      return false
+    }
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email")
+      return false
+    }
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      toast.error("Please enter a valid email address")
+      return false
+    }
+    if (!formData.subject.trim()) {
+      toast.error("Please enter a subject")
+      return false
+    }
+    if (!formData.message.trim()) {
+      toast.error("Please enter a message")
+      return false
+    }
+    return true
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submission started", formData)
+    
+    if (!validateForm()) return
     
     setIsSubmitting(true)
     
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      console.log("Form submitted successfully")
-      toast.success("Message sent successfully! I'll get back to you soon.")
-      setFormData({ name: "", email: "", subject: "", message: "" })
+      // Method 1: Using EmailJS (Recommended - requires setup)
+      if (EMAILJS_CONFIG.serviceId !== 'your_service_id') {
+        // EmailJS is configured, use it
+        const emailjs = (await import('@emailjs/browser')).default
+        
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'yadukrishnagiriwork@gmail.com'
+        }
+
+        await emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          templateParams,
+          EMAILJS_CONFIG.publicKey
+        )
+        
+        toast.success("Message sent successfully! I'll get back to you soon.")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        // Method 2: Fallback to mailto with pre-filled content
+        const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`)
+        const body = encodeURIComponent(
+          `Hi Yadukrishnagiri,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\nBest regards,\n${formData.name}`
+        )
+        const mailtoUrl = `mailto:yadukrishnagiriwork@gmail.com?subject=${subject}&body=${body}`
+        
+        window.open(mailtoUrl, '_blank')
+        toast.success("Email client opened! Please send the message from your email app.")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      }
     } catch (error) {
       console.error("Form submission error:", error)
-      toast.error("Failed to send message. Please try again or contact me directly.")
+      toast.error("Failed to send message. Please try the direct email link below or contact me directly.")
     } finally {
       setIsSubmitting(false)
     }
@@ -331,14 +397,24 @@ export function ContactSection() {
           <p className="text-muted-foreground mb-4">
             Feel free to reach out directly for urgent matters or quick questions.
           </p>
-          <Button
-            variant="outline"
-            onClick={() => window.open('mailto:john.doe@example.com', '_blank')}
-            className="hover:bg-accent hover:scale-105 transition-all duration-200"
-          >
-            <Mail className="w-4 h-4 mr-2" />
-            john.doe@example.com
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              variant="outline"
+              onClick={() => window.open('mailto:yadukrishnagiriwork@gmail.com', '_blank')}
+              className="hover:bg-accent hover:scale-105 transition-all duration-200"
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              yadukrishnagiriwork@gmail.com
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => window.open('/YADUKRISHNAGIRI.pdf', '_blank')}
+              className="hover:bg-accent hover:scale-105 transition-all duration-200"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download Resume
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

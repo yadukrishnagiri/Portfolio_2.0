@@ -8,7 +8,7 @@ import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Filter, Search, Sparkles, X } from "lucide-react"
+import { Filter, Search, Sparkles, X, Download } from "lucide-react"
 import { 
   SiPython, SiTensorflow, SiPytorch, SiScikitlearn, SiNumpy, SiPandas, 
   SiJupyter, SiR, SiMysql, SiMongodb, SiPostgresql, SiReact, SiNextdotjs, 
@@ -479,7 +479,7 @@ export function SkillsSection() {
               </p>
               
               {/* Legend */}
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
                 {constellations.map((constellation) => (
                   <Badge
                     key={constellation.name}
@@ -502,6 +502,28 @@ export function SkillsSection() {
                   </Badge>
                 ))}
               </div>
+
+              {/* Resume Download CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <p className="text-muted-foreground mb-4">
+                  Want to see these skills in action?
+                </p>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-3 hover:bg-accent hover:scale-105 transition-all duration-200"
+                  onClick={() => window.open('/YADUKRISHNAGIRI.pdf', '_blank')}
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         </div>

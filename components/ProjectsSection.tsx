@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Star } from "lucide-react"
+import { ExternalLink, Github, Star, Download } from "lucide-react"
 import Image from "next/image"
 
 // CUSTOMIZATION INSTRUCTIONS FOR PROJECTS:
@@ -46,59 +46,64 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "AI-Powered Medical Diagnosis System",
-    description: "Deep learning system for automated medical image analysis with 95% accuracy. Trained on 100,000+ medical images using custom CNN architecture. Features real-time inference, uncertainty quantification, and HIPAA-compliant data handling.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
-    technologies: ["Python", "TensorFlow", "OpenCV", "Flask", "Docker", "AWS"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "AI Code Iterator",
+    description: "A web application that helps developers improve their code using AI-powered suggestions. The tool analyzes code snippets and provides intelligent recommendations for optimization, error handling, and best practices, with a focus on game development workflows.",
+    image: "/AI Code Iterator.jpeg",
+    technologies:  ["Python","Flask",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "OpenAI API",
+      "Google Generative AI"],
+    liveUrl: "https://ai-compiler.onrender.com",
+    githubUrl: "https://github.com/yadukrishnagiri/ai-compiler",
     featured: true
   },
   {
-    title: "Real-time Facial Recognition System",
-    description: "Computer vision application with live facial detection and recognition capabilities. Implements advanced face embedding techniques with 99.2% accuracy on real-world datasets. Includes privacy-focused edge computing deployment.",
-    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=400&fit=crop",
-    technologies: ["Python", "OpenCV", "dlib", "Mediapipe", "SQLite", "Streamlit"],
+    title: "AskAI - AI-Powered CV Analyzer and Interactive Interviewer",
+    description: "An intelligent recruitment tool that analyzes CVs using Gemini AI and conducts interactive technical interviews. The system extracts information from PDF resumes, evaluates technical skills, identifies key achievements, and conducts adaptive interviews with real-time feedback and scoring.",
+    image: "/AskAI - AI-Powered CV Analyzer and Interactive Interviewer.jpeg",
+    technologies: ["Python", "Google Gemini AI", "PDFPlumber", "JSON", "Threading", "Logging", "Natural Language Processing"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/yadukrishnagiri/askai",
     featured: true
   },
   {
-    title: "NLP Document Summarization API",
-    description: "RESTful API service for intelligent document summarization using transformer models. Supports multiple languages, custom summary lengths, and batch processing. Deployed on cloud infrastructure serving 10K+ requests daily.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    technologies: ["Python", "HuggingFace", "FastAPI", "Redis", "PostgreSQL", "Docker"],
+    title: "A.R.T.E.M.I.S - Football Statistics Assistant",
+    description: "Advanced Real-Time Enhanced Match Information System - An AI-powered football statistics assistant using RAG (Retrieval Augmented Generation) technology to provide comprehensive analysis and insights about football matches, players, teams, and historical data through an interactive web interface.",
+    image: "/A.R.T.E.M.I.S - Football Statistics Assistant.jpeg",
+    technologies: ["Python", "Flask", "LangChain", "ChromaDB", "Ollama", "Pandas", "HTML/CSS", "RAG"],
     liveUrl: "#",
-    githubUrl: "#",
-    featured: true
+    githubUrl: "https://github.com/yadukrishnagiri/A.R.T.E.M.I.S---Football-Statistics-Assistant",
+    featured: false
   },
   {
-    title: "Stock Price Prediction Dashboard",
-    description: "Interactive web application combining machine learning models with real-time financial data visualization. Features multiple ML algorithms, technical indicators, and risk assessment metrics for investment decision support.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
-    technologies: ["Python", "React", "D3.js", "scikit-learn", "Alpha Vantage API", "MongoDB"],
+    title: "Hands-Free Interactive System",
+    description: "Developed an innovative accessibility system that combines eye-tracking and voice recognition to enable hands-free computer interaction. The system uses computer vision for precise mouse control and voice commands for text input and system control.",
+    image: "/Hands-Free Interactive System.jpeg",
+    technologies: [ "Python","OpenCV", "MediaPipe", "SpeechRecognition", "PyAutoGUI", "NumPy", "Matplotlib"],
     liveUrl: "#",
     githubUrl: "#",
     featured: false
   },
   {
-    title: "Voice-Controlled Smart Assistant",
-    description: "Multi-modal AI assistant with speech recognition, natural language understanding, and voice synthesis. Integrated with IoT devices for smart home automation and supports custom voice commands for personalized interactions.",
-    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&h=400&fit=crop",
-    technologies: ["Python", "SpeechRecognition", "pyttsx3", "spaCy", "Raspberry Pi", "MQTT"],
+    title: "World Happiness Index Analysis",
+    description: "Comprehensive analysis of the World Happiness Report dataset using Python, focusing on understanding factors influencing global happiness through statistical analysis and machine learning models.",
+    image: "/World Happiness Index Analysis.jpeg",
+    technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Plotly"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/yadukrishnagiri/happiness-index-dataset-evaluation",
     featured: false
   },
   {
-    title: "Automated Data Pipeline System",
-    description: "ETL pipeline for processing large-scale datasets with automated data quality checks, transformation, and loading. Handles 1M+ records daily with comprehensive logging, monitoring, and error recovery mechanisms.",
-    image: "https://images.unsplash.com/photo-1518186233392-c232d7dd8c0d?w=600&h=400&fit=crop",
-    technologies: ["Python", "Apache Airflow", "Pandas", "PostgreSQL", "AWS S3", "Grafana"],
+    title: "OCR Model Performance Comparison: GPU vs CPU",
+    description: "A comprehensive performance analysis project comparing OCR (Optical Character Recognition) model inference speed and accuracy between GPU and CPU using TensorFlow. The project implements a CNN-based digit recognition model trained on MNIST dataset and benchmarks FPS (frames per second) and accuracy metrics across different hardware configurations with visualization of results.",
+    image: "/OCR Model Performance Comparison GPU vs CPU.jpeg",
+    technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "Matplotlib", "MNIST", "CNN", "NumPy"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/yadukrishnagiri/OCR-Model-Performance-Comparison-GPU-vs-CPU",
     featured: false
-  }
+}
 ]
 
 export function ProjectsSection() {
@@ -249,15 +254,26 @@ export function ProjectsSection() {
           <p className="text-muted-foreground mb-4">
             Interested in seeing more of my work?
           </p>
-          <Button
-            variant="outline"
-            size="lg"
-            className="px-8 py-3 hover:bg-accent hover:scale-105 transition-all duration-200"
-            onClick={() => window.open('https://github.com/your-username', '_blank')}
-          >
-            <Github className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 py-3 hover:bg-accent hover:scale-105 transition-all duration-200"
+              onClick={() => window.open('https://github.com/yadukrishnagiri', '_blank')}
+            >
+              <Github className="w-5 h-5 mr-2" />
+              View All Projects on GitHub
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 py-3 hover:bg-accent hover:scale-105 transition-all duration-200"
+              onClick={() => window.open('/YADUKRISHNAGIRI.pdf', '_blank')}
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Resume
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

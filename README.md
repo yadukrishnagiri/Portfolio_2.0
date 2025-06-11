@@ -145,6 +145,51 @@ This project is for portfolio purposes.
 
 This is a personal portfolio project. Feel free to fork and customize for your own use!
 
+## 📧 Contact Form Setup
+
+The contact form supports two methods of sending emails:
+
+### Method 1: EmailJS (Recommended for Production)
+
+1. **Sign up for EmailJS**: Go to [https://emailjs.com](https://emailjs.com) and create a free account
+2. **Create a Service**: 
+   - Go to Email Services
+   - Add a new service (Gmail, Outlook, etc.)
+   - Follow the setup instructions for your email provider
+   - Note down your **Service ID**
+
+3. **Create an Email Template**:
+   - Go to Email Templates
+   - Create a new template
+   - Use these variables in your template:
+     ```
+     From: {{from_name}} ({{from_email}})
+     Subject: {{subject}}
+     Message: {{message}}
+     ```
+   - Note down your **Template ID**
+
+4. **Get your Public Key**:
+   - Go to Account > General
+   - Copy your **Public Key**
+
+5. **Update Configuration**:
+   - Open `components/ContactSection.tsx`
+   - Replace the EmailJS configuration:
+     ```typescript
+     const EMAILJS_CONFIG = {
+       serviceId: 'your_actual_service_id',
+       templateId: 'your_actual_template_id', 
+       publicKey: 'your_actual_public_key'
+     }
+     ```
+
+### Method 2: Mailto Fallback (Default)
+
+If EmailJS is not configured, the form will automatically use the mailto method, which opens the user's default email client with a pre-filled message.
+
+## 🚀 Getting Started
+
 ---
 
 Built with ❤️ using Next.js and shadcn/ui 

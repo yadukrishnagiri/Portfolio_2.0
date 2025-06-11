@@ -20,9 +20,9 @@ const techStack = [
 ]
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/your-username", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/your-handle", label: "Twitter" },
+  { icon: Github, href: "https://github.com/yadukrishnagiri", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/yadukrishnagiri/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/YADUKRISHNGIRi", label: "Twitter" },
 ]
 
 export function HeroSection() {
@@ -66,45 +66,35 @@ export function HeroSection() {
           className="text-center max-w-4xl mx-auto"
         >
           {/* Avatar */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <Avatar className="w-32 h-32 mx-auto border-4 border-gradient-to-r from-cosmic-blue to-cosmic-purple">
-              <AvatarImage src="/profile-photo.jpg" alt="Profile" />
-              <AvatarFallback className="text-2xl font-bold bg-gradient-to-r from-cosmic-blue to-cosmic-purple text-white">
-                JD
-              </AvatarFallback>
-            </Avatar>
+          <motion.div variants={itemVariants} className="text-center mb-8">
+            <div className="flex justify-center mb-8">
+              <Avatar className="w-32 h-32 border-4 border-cosmic-gradient">
+                <AvatarImage src="/avatar.jpg" alt="Yadukrishnagiri" />
+                <AvatarFallback className="text-2xl font-bold bg-cosmic-gradient text-white">
+                  YG
+                </AvatarFallback>
+              </Avatar>
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Hi, I'm <span className="text-cosmic-gradient">Yadukrishnagiri</span>
+            </h1>
+            
+            <div className="text-xl sm:text-2xl text-muted-foreground mb-8">
+              <span className="block">AI/ML Engineer & Full-Stack Developer</span>
+              <span className="block text-lg mt-2">Transforming Ideas into Intelligent Solutions</span>
+            </div>
           </motion.div>
-
-          {/* Main Heading */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-cosmic-gradient leading-tight"
-          >
-            John Doe
-          </motion.h1>
-
-          <motion.h2
-            variants={itemVariants}
-            className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 font-light"
-          >
-            ML Engineer & Full-Stack Developer
-          </motion.h2>
 
           {/* Bio */}
           <motion.div variants={itemVariants} className="mb-12 space-y-4 text-lg text-muted-foreground max-w-3xl mx-auto">
             <p>
-              I'm a passionate Machine Learning Engineer with a deep love for transforming data into intelligent solutions. 
-              With expertise spanning from neural networks to web applications, I bridge the gap between cutting-edge AI research and practical, scalable implementations.
+              Data Science and AI professional with a forward-thinking approach to innovation and impact. 
+              I bring critical analysis, adaptability, and clear communication to complex challenges in fast-paced environments.
             </p>
             <p>
-              My journey began with curiosity about how machines could learn and adapt, leading me through the fascinating worlds of 
-              computer vision, natural language processing, and predictive analytics. Today, I combine this AI expertise with full-stack 
-              development skills to create end-to-end intelligent applications.
-            </p>
-            <p>
-              When I'm not training models or crafting code, you'll find me exploring the latest research papers, contributing to open-source 
-              projects, or mentoring the next generation of AI enthusiasts. I believe in the power of technology to solve real-world problems 
-              and make a positive impact on society.
+              Currently pursuing B.Tech in Computer Science with specialization in Data Science and Artificial Intelligence 
+              at SRM University Delhi-NCR. Passionate about bridging the gap between cutting-edge AI research and practical applications.
             </p>
           </motion.div>
 
@@ -139,7 +129,7 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               className="px-8 py-3 text-lg border-2 hover:bg-accent hover:scale-105 transition-all duration-200"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open('/YADUKRISHNAGIRI.pdf', '_blank')}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
